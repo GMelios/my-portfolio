@@ -20,6 +20,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Clear Gatsby cache
+        run: npm run clean
+
       - name: Build
         run: npm run build
         env:
