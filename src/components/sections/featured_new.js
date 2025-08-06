@@ -370,7 +370,7 @@ const Featured = () => {
   return (
     <section id="projects">
       <h2 className="numbered-heading" ref={revealTitle}>
-        Recent Publications
+        Selected Publications
       </h2>
 
       <StyledProjectsGrid>

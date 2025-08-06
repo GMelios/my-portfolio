@@ -94,13 +94,6 @@ const StyledPic = styled.div`
       transition: var(--transition);
     }
 
-    &:before {
-      top: 0;
-      left: 0;
-      background-color: var(--navy);
-      mix-blend-mode: screen;
-    }
-
     &:after {
       border: 2px solid var(--green);
       top: 14px;

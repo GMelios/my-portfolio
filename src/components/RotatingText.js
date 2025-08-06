@@ -4,15 +4,16 @@ import styled from 'styled-components';
 const StyledRotatingText = styled.span`
   color: var(--green);
   display: inline;
-  min-width: 280px;
   white-space: nowrap;
+  font-weight: inherit;
+  font-size: inherit;
 `;
 
 const RotatingText = () => {
-  const texts = ['voter behavior', 'labour market preferences', 'behavioral biases'];
+  const texts = ['voter behavior', 'labor markets', 'economic biases'];
 
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState('voter behavior');
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
