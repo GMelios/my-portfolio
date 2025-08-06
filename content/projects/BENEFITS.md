@@ -1,13 +1,11 @@
 ---
-date: '2024-03-01'
+date: '2025-01-01'
 title: 'BENEFITS - Measuring the Value added of Social Services'
 external: 'https://www.georgemelios.com/project/benefits/'
 tech:
   - Public Policy
   - Social Services
   - EU Horizon Europe
-  - Impact Evaluation
-  - Cost-Benefit Analysis
 showInProjects: true
 ---
 

@@ -1,13 +1,11 @@
 ---
-date: '2024-06-01'
+date: '2024-12-01'
 title: 'MultiPoD - Political Participation in Multilingual Spaces'
 external: 'https://www.georgemelios.com/project/multipod/'
 tech:
   - Political Participation
-  - Multilingualism
   - EU Horizon Europe
   - Comparative Politics
-  - Survey Methods
 showInProjects: true
 ---
 
