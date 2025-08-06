@@ -69,6 +69,12 @@ exports.createSchemaCustomization = ({ actions }) => {
       cover: File @fileByRelativePath
       cta: String
       showInProjects: Boolean
+      authors: String
+      journal: String
+      year: String
+      badge: String
+      bib: String
+      code: String
     }
   `;
 

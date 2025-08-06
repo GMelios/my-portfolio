@@ -10,12 +10,12 @@ const variables = css`
     --dark-slate: #2c2c2c;
     --slate: #363535ff;
     --light-slate: #212121ff;
-    --lightest-slate: #666;
+    --lightest-slate: #7d485dff;
     --white: #ffffff;
-    --green: #394a43ff;
-    --green-tint: #394a43ff;
-    --pink: #394a43ff;
-    --blue: #394a43ff;
+    --green: #7d485dff;
+    --green-tint: #1b2a41ff;
+    --pink: #1b2a41ff;
+    --blue: #1b2a41ff;
 
     --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;

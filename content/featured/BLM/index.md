@@ -6,6 +6,8 @@ authors: 'Bouke Klein Teeselink, George Melios'
 journal: 'Political Behavior'
 year: '2025'
 badge: null
+bib: null
+code: null
 tech:
   - Political Behavior
   - Event Studies

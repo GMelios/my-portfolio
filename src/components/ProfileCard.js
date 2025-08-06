@@ -100,8 +100,7 @@ const ProfileCard = () => (
       }}
     />
     <div className="profile-info">
-      <h4 className="profile-name">George Melios</h4>
-      <p className="profile-title">Research Fellow</p>
+      <p className="profile-title">Researcher</p>
       <p className="profile-affiliation">London School of Economics</p>
       <p className="profile-affiliation">Royal Holloway University of London</p>
     </div>

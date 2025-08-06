@@ -23,7 +23,7 @@ const RotatingText = () => {
 
       if (isDeleting) {
         setDisplayText(currentText.substring(0, displayText.length - 1));
-        setTypingSpeed(75);
+        setTypingSpeed(100);
       } else {
         setDisplayText(currentText.substring(0, displayText.length + 1));
         setTypingSpeed(150);

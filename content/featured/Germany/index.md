@@ -6,6 +6,8 @@ authors: 'G. Kavetsos, C. Krekel, George Melios'
 journal: 'Political Psychology'
 year: '2025'
 badge: null
+bib: null
+code: null
 tech:
 ---
 
