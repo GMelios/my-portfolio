@@ -8,5 +8,3 @@ url: 'https://www.qmul.ac.uk/'
 ---
 
 - Teaching Applied Economics (BUS128) to undergraduate business students
-- Developing curriculum that bridges economic theory with real-world business applications
-- Mentoring students in their understanding of economic principles and empirical methods

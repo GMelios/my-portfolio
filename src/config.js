@@ -4,11 +4,11 @@ module.exports = {
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/georgemelios',
+      url: 'https://github.com/GMelios',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/georgemelios',
+      url: 'https://www.linkedin.com/in/george-melios-a9b6a01a1',
     },
     {
       name: 'Twitter',
