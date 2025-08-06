@@ -4,6 +4,40 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+// Polyfill for Web APIs to fix build issues with Node.js 16
+if (typeof ReadableStream === 'undefined') {
+  const { ReadableStream, WritableStream, TransformStream } = require('web-streams-polyfill');
+  global.ReadableStream = ReadableStream;
+  global.WritableStream = WritableStream;
+  global.TransformStream = TransformStream;
+}
+
+if (typeof Blob === 'undefined') {
+  const { Blob } = require('buffer');
+  global.Blob = Blob;
+}
+
+if (typeof File === 'undefined') {
+  // Simple File polyfill
+  global.File = class File extends Blob {
+    constructor(bits, name, options = {}) {
+      super(bits, options);
+      this.name = name;
+      this.lastModified = options.lastModified || Date.now();
+    }
+  };
+}
+
+if (typeof DOMException === 'undefined') {
+  // Simple DOMException polyfill
+  global.DOMException = class DOMException extends Error {
+    constructor(message, name = 'Error') {
+      super(message);
+      this.name = name;
+    }
+  };
+}
+
 const path = require('path');
 const _ = require('lodash');
 
