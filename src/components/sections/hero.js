@@ -72,14 +72,10 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I'm an economist specializing in applied political economy and behavioral economics.
+        I'm an applied economist specializing in political economy and behavioral economics.
         Currently, I'm a researcher at the{' '}
         <a href="https://www.lse.ac.uk/PBS" target="_blank" rel="noreferrer">
           London School of Economics
-        </a>{' '}
-        and lecturer at{' '}
-        <a href="https://www.qmul.ac.uk/" target="_blank" rel="noreferrer">
-          Queen Mary University London
         </a>
         , focusing on democratic institutions and citizen participation.
       </p>
