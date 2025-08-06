@@ -1,7 +1,11 @@
 ---
-date: '2'
+date: '1.5'
 title: 'Remnants of Civil War: Immediate and long-run effects of electoral oppression in cold war Greece'
 external: 'https://www.georgemelios.com/1961/'
+authors: 'Vassileios Logothetis, George Melios'
+journal: 'Working Paper'
+year: '2025'
+badge: 'JMP'
 tech:
 showInProjects: true
 ---

@@ -2,12 +2,11 @@
 date: '2022-01-01'
 title: 'Who Needs Security in a Crisis? Evidence from an In-the-Field Choice Experiment in Lebanon'
 external: 'https://www.georgemelios.com/wp/dce/'
+authors: 'George Melios, Yara Sleiman, Elisabetta Pietrostefani, Henrietta Moore'
+journal: 'Working Paper'
+year: '2025'
+badge: 'Working Paper'
 tech:
-  - Development Economics
-  - Choice Experiments
-  - Field Research
-  - Crisis Economics
-  - R
 showInProjects: true
 ---
 
