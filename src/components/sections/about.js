@@ -73,8 +73,7 @@ const StyledPic = styled.div`
       }
 
       .img {
-        filter: none;
-        mix-blend-mode: normal;
+        transition: var(--transition);
       }
     }
 
