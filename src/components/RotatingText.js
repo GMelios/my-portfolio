@@ -9,14 +9,7 @@ const StyledRotatingText = styled.span`
 `;
 
 const RotatingText = () => {
-  const texts = [
-    'understand voter behavior',
-    'study democratic institutions',
-    'analyze political economics',
-    'design field experiments',
-    'examine electoral systems',
-    'investigate behavioral biases',
-  ];
+  const texts = ['voter behavior', 'labour market preferences', 'behavioral biases'];
 
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');

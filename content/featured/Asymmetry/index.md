@@ -1,7 +1,7 @@
 ---
 date: '1'
 title: 'Origin of (A)symmetry: The Evolution of Out-Party Distrust in the United States'
-external: 'https://www.georgemelios.com/publication/asymmetries/'
+external: 'https://www.journals.uchicago.edu/doi/10.1086/732971'
 tech:
   - Political Psychology
   - Causal Inference

@@ -6,9 +6,9 @@ const variables = css`
     --navy: #f9f7f4;
     --light-navy: #f5f2ed;
     --lightest-navy: #ede8e0;
-    --navy-shadow: rgba(245, 235, 225, 0.7);
+    --navy-shadow: rgba(40, 40, 40);
     --dark-slate: #2c2c2c;
-    --slate: #545454;
+    --slate: #363535ff;
     --light-slate: #212121ff;
     --lightest-slate: #ccc;
     --white: #ffffff;
