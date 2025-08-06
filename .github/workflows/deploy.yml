@@ -20,16 +20,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18.x'
-          cache: 'npm'
+          cache: 'yarn'
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
 
       - name: Clear Gatsby cache
-        run: npm run clean
+        run: yarn clean
 
       - name: Build
-        run: npm run build
+        run: yarn build
         env:
           NODE_OPTIONS: '--no-experimental-fetch'
 
