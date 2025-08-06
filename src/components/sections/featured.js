@@ -67,9 +67,10 @@ const StyledProject = styled.li`
   }
 
   .publication-journal {
-    color: var(--light-slate);
+    color: #394a43ff;
     font-style: italic;
     font-size: var(--fz-md);
+    font-weight: bold;
     margin-bottom: 15px;
   }
 
@@ -142,6 +143,8 @@ const Featured = () => {
               journal
               year
               badge
+              bib
+              code
             }
             html
           }
@@ -174,12 +177,13 @@ const Featured = () => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, github, cta, authors, journal, year, badge } = frontmatter;
+            const { external, title, github, cta, authors, journal, year, badge, bib, code } =
+              frontmatter;
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <div className="publication-title-row">
-                  <div className="publication-badge">{badge || 'JoPolitics'}</div>
+                  {badge && <div className="publication-badge">{badge}</div>}
                   <h3 className="publication-title">
                     <a href={external || cta || '#'}>{title}</a>
                   </h3>
@@ -213,8 +217,8 @@ const Featured = () => {
                     className={abstractVisible[i] ? 'active' : ''}>
                     Abstract
                   </button>
-                  <button disabled>BIB</button>
-                  <button disabled>CODE</button>
+                  {bib ? <a href={bib}>BIB</a> : <button disabled>BIB</button>}
+                  {code ? <a href={code}>CODE</a> : <button disabled>CODE</button>}
                   <button disabled>PDF</button>
                   {github && <a href={github}>GitHub</a>}
                 </div>

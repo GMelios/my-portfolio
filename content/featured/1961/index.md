@@ -5,7 +5,7 @@ external: 'https://www.georgemelios.com/1961/'
 authors: 'Vassileios Logothetis, George Melios'
 journal: 'Working Paper'
 year: '2025'
-badge: 'JMP'
+badge: null
 tech:
 showInProjects: true
 ---

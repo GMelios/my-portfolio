@@ -5,7 +5,7 @@ external: 'https://www.georgemelios.com/publication/german/'
 authors: 'G. Kavetsos, C. Krekel, George Melios'
 journal: 'Political Psychology'
 year: '2025'
-badge: 'PolPsy'
+badge: null
 tech:
 ---
 

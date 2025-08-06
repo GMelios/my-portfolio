@@ -5,7 +5,7 @@ external: 'https://www.georgemelios.com/publication/blm/'
 authors: 'Bouke Klein Teeselink, George Melios'
 journal: 'Political Behavior'
 year: '2025'
-badge: 'PoBe'
+badge: null
 tech:
   - Political Behavior
   - Event Studies

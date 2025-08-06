@@ -5,7 +5,7 @@ external: 'https://www.georgemelios.com/publication/donations/'
 authors: 'Bouke Klein Teeselink, George Melios'
 journal: 'Public Choice'
 year: '2025'
-badge: 'PubChoice'
+badge: null
 tech:
 ---
 

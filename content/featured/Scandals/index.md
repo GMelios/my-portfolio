@@ -5,7 +5,7 @@ external: 'https://www.georgemelios.com/wp/religion/'
 authors: 'Bouke Klein Teeselink, George Melios'
 journal: 'Working Paper'
 year: '2025'
-badge: 'Working Paper'
+badge: null
 tech:
 showInProjects: true
 ---

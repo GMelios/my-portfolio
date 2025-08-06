@@ -5,7 +5,6 @@ external: 'https://www.journals.uchicago.edu/doi/10.1086/732971'
 authors: 'Bouke Klein Teeselink, George Melios'
 journal: 'Journal of Politics'
 year: '2025'
-badge: 'JoPolitics'
 tech:
 ---
 

@@ -5,7 +5,7 @@ external: 'https://gmelios.github.io/uploads/dating_v1.pdf'
 authors: 'Yara Sleiman, George Melios, Paul Dolan'
 journal: 'Political Science Research & Methods'
 year: '2025'
-badge: 'PSRM'
+badge: null
 tech:
 ---
 
