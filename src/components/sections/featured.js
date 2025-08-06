@@ -208,15 +208,15 @@ const Featured = () => {
 
                 <div className="publication-links">
                   {cta && <a href={cta}>DOI</a>}
-                  <button disabled>BIB</button>
-                  <button disabled>CODE</button>
-                  <button disabled>PDF</button>
-                  {github && <a href={github}>GitHub</a>}
                   <button
                     onClick={() => toggleAbstract(i)}
                     className={abstractVisible[i] ? 'active' : ''}>
                     Abstract
                   </button>
+                  <button disabled>BIB</button>
+                  <button disabled>CODE</button>
+                  <button disabled>PDF</button>
+                  {github && <a href={github}>GitHub</a>}
                 </div>
 
                 {abstractVisible[i] && html && (
