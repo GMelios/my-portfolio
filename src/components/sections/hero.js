@@ -65,8 +65,7 @@ const Hero = () => {
   const two = <h2 className="big-heading">George Melios.</h2>;
   const three = (
     <h3 className="big-heading">
-      I use applied econometrics to study
-      <RotatingText />
+      I use applied econometrics to study <RotatingText />
     </h3>
   );
   const four = (

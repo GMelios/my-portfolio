@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 const StyledRotatingText = styled.span`
   color: var(--green);
-  display: inline-block;
-  min-width: 300px;
-  text-align: left;
+  display: inline;
+  min-width: 280px;
+  white-space: nowrap;
 `;
 
 const RotatingText = () => {
