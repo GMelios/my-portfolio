@@ -73,16 +73,13 @@ const StyledPic = styled.div`
       }
 
       .img {
-        filter: none;
-        mix-blend-mode: normal;
+        transition: var(--transition);
       }
     }
 
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
       transition: var(--transition);
     }
 
@@ -95,13 +92,6 @@ const StyledPic = styled.div`
       height: 100%;
       border-radius: var(--border-radius);
       transition: var(--transition);
-    }
-
-    &:before {
-      top: 0;
-      left: 0;
-      background-color: var(--navy);
-      mix-blend-mode: screen;
     }
 
     &:after {
@@ -126,12 +116,11 @@ const About = () => {
   }, []);
 
   const skills = [
-    'R & Stata',
-    'Python',
-    'Experimental Design',
-    'Econometrics',
-    'Game Theory',
-    'Data Analysis',
+    'Political Economy',
+    'Behavioral Economics',
+    'Labour Economics',
+    'Experimental Designs',
+    'Causal Inference',
   ];
 
   return (
@@ -142,11 +131,8 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is George and I'm passionate about understanding how people make
-              economic decisions and how these decisions shape political systems. My interest in
-              behavioral economics began during my undergraduate studies when I discovered how
-              psychological insights could explain economic phenomena that traditional models
-              couldn't.
+              Welcome! My name is George and I'm passionate about understanding how people make
+              economic and political decisions and how these decisions shape public policies.
             </p>
 
             <p>
@@ -154,16 +140,18 @@ const About = () => {
               <a href="https://www.lse.ac.uk/" target="_blank" rel="noreferrer">
                 London School of Economics
               </a>{' '}
-              where I explore the intersection of political economy and behavioral economics. My
-              work focuses on how cognitive biases and social preferences influence voting behavior,
-              policy preferences, and economic outcomes.
+              where my research primarily focuses on the foundations of democracy: how democratic
+              institutions function, how citizens interact with them and how they can be improved. I
+              look at the electoral cycle through four essential angles: i) the factors that affect
+              citizens’ participation, ii) those that shape their preferences, iii) the effect of
+              elections on policies and welfare, and iv) collective decision making when
+              institutions fail.
             </p>
 
             <p>
-              My research has been supported by various academic institutions and I've presented my
-              findings at conferences across Europe. I'm particularly interested in using
-              experimental methods and large-scale data analysis to test economic theories in
-              real-world political contexts.
+              While my individual papers focus on just one or two of these steps at a time, my
+              research as a whole seeks to paint a fresh and articulated picture of how democracy
+              works, from how voters think and act to the output of democratic processes.
             </p>
 
             <p>Here are some areas and tools I work with regularly:</p>
