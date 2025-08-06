@@ -125,7 +125,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['Political Economy', 'Behavioral Economics', 'Causal Inference'];
+  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,25 +135,33 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              My name is George and my academic work is on applied political economy. My research
-              primarily focuses on the foundations of democracy: how democratic institutions
-              function, how citizens interact with them and how they can be improved.
+              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
+              interest in web development started back in 2012 when I decided to try editing custom
+              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
+              about HTML &amp; CSS!
             </p>
 
             <p>
-              I look at the electoral cycle through four essential angles: i) the factors that
-              affect citizens' participation, ii) those that shape their preferences, iii) the
-              effect of elections on policies and welfare, and iv) collective decision making when
-              institutions fail.
+              Fast-forward to today, and I’ve had the privilege of working at{' '}
+              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
+              <a href="https://starry.com/">a start-up</a>,{' '}
+              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
+              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
+              main focus these days is building accessible, inclusive products and digital
+              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
+              clients.
             </p>
 
             <p>
-              While my individual papers focus on just one or two of these steps at a time, my
-              research as a whole seeks to paint a fresh and articulated picture of how democracy
-              works, from how voters think and act to the output of democratic processes.
+              I also recently{' '}
+              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
+                launched a course
+              </a>{' '}
+              that covers everything you need to build a web app with the Spotify API using Node
+              &amp; React.
             </p>
 
-            <p>Here are some areas and tools I work with regularly:</p>
+            <p>Here are a few technologies I’ve been working with recently:</p>
           </div>
 
           <ul className="skills-list">
@@ -169,7 +177,7 @@ const About = () => {
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
-              alt="George Melios"
+              alt="Headshot"
             />
           </div>
         </StyledPic>

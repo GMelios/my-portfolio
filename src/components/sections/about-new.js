@@ -125,7 +125,14 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['Political Economy', 'Behavioral Economics', 'Causal Inference'];
+  const skills = [
+    'R & Stata',
+    'Python',
+    'Experimental Design',
+    'Econometrics',
+    'Game Theory',
+    'Data Analysis',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,22 +142,28 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              My name is George and my academic work is on applied political economy. My research
-              primarily focuses on the foundations of democracy: how democratic institutions
-              function, how citizens interact with them and how they can be improved.
+              Hello! My name is George and I'm passionate about understanding how people make
+              economic decisions and how these decisions shape political systems. My interest in
+              behavioral economics began during my undergraduate studies when I discovered how
+              psychological insights could explain economic phenomena that traditional models
+              couldn't.
             </p>
 
             <p>
-              I look at the electoral cycle through four essential angles: i) the factors that
-              affect citizens' participation, ii) those that shape their preferences, iii) the
-              effect of elections on policies and welfare, and iv) collective decision making when
-              institutions fail.
+              Currently, I'm conducting research at the{' '}
+              <a href="https://www.lse.ac.uk/" target="_blank" rel="noreferrer">
+                London School of Economics
+              </a>{' '}
+              where I explore the intersection of political economy and behavioral economics. My
+              work focuses on how cognitive biases and social preferences influence voting behavior,
+              policy preferences, and economic outcomes.
             </p>
 
             <p>
-              While my individual papers focus on just one or two of these steps at a time, my
-              research as a whole seeks to paint a fresh and articulated picture of how democracy
-              works, from how voters think and act to the output of democratic processes.
+              My research has been supported by various academic institutions and I've presented my
+              findings at conferences across Europe. I'm particularly interested in using
+              experimental methods and large-scale data analysis to test economic theories in
+              real-world political contexts.
             </p>
 
             <p>Here are some areas and tools I work with regularly:</p>

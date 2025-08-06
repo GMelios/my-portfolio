@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 import { email } from '@config';
-import RotatingText from '../RotatingText';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -63,24 +62,17 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">George Melios.</h2>;
-  const three = (
-    <h3 className="big-heading">
-      I use econometrics to <RotatingText />
-    </h3>
-  );
+  const three = <h3 className="big-heading">I study economic behavior and political systems.</h3>;
   const four = (
     <>
       <p>
-        I'm an economist specializing in applied political economy and behavioral economics.
-        Currently, I'm a researcher at the{' '}
-        <a href="https://www.lse.ac.uk/PBS" target="_blank" rel="noreferrer">
+        I'm an economist specializing in political economy and behavioral economics. Currently, I'm
+        conducting research at the{' '}
+        <a href="https://www.lse.ac.uk/" target="_blank" rel="noreferrer">
           London School of Economics
-        </a>{' '}
-        and lecturer at{' '}
-        <a href="https://www.qmul.ac.uk/" target="_blank" rel="noreferrer">
-          Queen Mary University London
         </a>
-        , focusing on democratic institutions and citizen participation.
+        , exploring how behavioral insights can inform economic policy and political
+        decision-making.
       </p>
     </>
   );
