@@ -16,26 +16,26 @@ const StyledHeroSection = styled.section`
   padding: 0;
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 60px;
-  max-width: 1200px;
+  grid-template-columns: 1fr 2.2fr;
+  gap: 80px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px 0 60px;
 
   @media (max-width: 1400px) {
-    max-width: 1100px;
-    gap: 50px;
+    max-width: 1200px;
+    gap: 70px;
     padding: 0 20px 0 50px;
   }
 
   @media (max-width: 1200px) {
-    max-width: 1000px;
-    gap: 40px;
+    max-width: 1100px;
+    gap: 60px;
     padding: 0 20px 0 40px;
   }
 
   @media (max-width: 1080px) {
-    gap: 30px;
+    gap: 50px;
     padding: 0 20px 0 30px;
   }
 
@@ -64,6 +64,8 @@ const StyledHeroSection = styled.section`
     align-items: flex-start;
     justify-content: center;
     min-height: 60vh;
+    width: 100%;
+    max-width: 100%;
 
     @media (max-width: 768px) {
       min-height: auto;
@@ -83,19 +85,19 @@ const StyledHeroSection = styled.section`
   }
 
   h1 {
-    margin: 0 0 30px 4px;
+    margin: 0 0 10px 4px;
     color: var(--green);
     font-family: var(--font-mono);
     font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
     font-weight: 400;
 
     @media (max-width: 480px) {
-      margin: 0 0 20px 2px;
+      margin: 0 0 8px 2px;
     }
   }
 
   h3 {
-    margin-top: 5px;
+    margin: 0 0 10px 0;
     color: var(--slate);
     line-height: 1.3;
     max-width: 100%;
@@ -129,12 +131,61 @@ const StyledHeroSection = styled.section`
 
   p {
     margin: 20px 0 0;
-    max-width: 540px;
+    max-width: 100%;
+    line-height: 1.7;
+    font-size: var(--fz-lg);
+
+    @media (max-width: 768px) {
+      max-width: 90vw;
+      font-size: var(--fz-md);
+    }
   }
 
   .email-link {
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .email-link {
+      margin-top: 0;
+    }
+  }
+
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0px 10px;
+    padding: 0;
+    margin: 20px 0 0 0;
+    overflow: hidden;
+    list-style: none;
+
+    li {
+      position: relative;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      font-family: var(--font-mono);
+      font-size: var(--fz-xs);
+
+      &:before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        color: var(--green);
+        font-size: var(--fz-sm);
+        line-height: 12px;
+      }
+    }
   }
 `;
 
@@ -151,32 +202,54 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">George Melios.</h2>;
+  const one = (
+    <h1>
+      <span style={{ color: 'var(--slate)' }}>Hi, my name is</span>
+    </h1>
+  );
+  const two = (
+    <h1>
+      <span
+        className="medium-heading"
+        style={{ color: 'var(--green)', fontFamily: 'var(--font-sans)', marginBottom: '0px' }}>
+        George Melios.
+      </span>
+    </h1>
+  );
   const three = (
-    <h3 className="medium-heading">
-      I use causal inference to study
-      <p style={{ margin: '5px 0 0 0' }}>
-        <RotatingText />
-      </p>
+    <h3 className="medium-heading" style={{ marginTop: '0px' }}>
+      I use causal inference to study <RotatingText />
     </h3>
   );
   const four = (
     <>
       <p>
-        I'm an applied economist specializing in political economy and behavioral economics.
         Currently, I'm a researcher at the{' '}
         <a href="https://www.lse.ac.uk/PBS" target="_blank" rel="noreferrer">
           London School of Economics
         </a>
-        , focusing on democratic institutions and citizen participation.
+        , working on political economy and behavioural science issues. My research primarily focuses
+        on the foundations of democracy: how democratic institutions function, how citizens interact
+        with them and how they can be improved. I look at the electoral cycle through four essential
+        angles: i) the factors that affect citizens' participation, ii) those that shape their
+        preferences, iii) the effect of elections on policies and welfare, and iv) collective
+        decision making when institutions fail.
       </p>
     </>
   );
   const five = (
-    <a className="email-link" href={`mailto:${email}`} target="_blank" rel="noreferrer">
-      Get In Touch
-    </a>
+    <div className="hero-buttons">
+      <a className="email-link" href={`mailto:${email}`} target="_blank" rel="noreferrer">
+        Get In Touch
+      </a>
+      <a
+        className="email-link"
+        href="https://georgemelios.com/1961"
+        target="_blank"
+        rel="noreferrer">
+        Job Market Paper
+      </a>
+    </div>
   );
 
   const items = [one, two, three, four, five];

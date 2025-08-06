@@ -22,8 +22,8 @@ const StyledProfileCard = styled.div`
   }
 
   .profile-image {
-    width: 220px;
-    height: 220px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     margin-bottom: 20px;
     flex-shrink: 0;
@@ -43,7 +43,7 @@ const StyledProfileCard = styled.div`
     flex-direction: column;
     min-width: 0;
     align-items: center;
-    width: 220px;
+    width: 280px;
     text-align: center;
 
     @media (max-width: 768px) {
@@ -90,8 +90,8 @@ const ProfileCard = () => (
     <StaticImage
       className="profile-image"
       src="../images/me.jpg"
-      width={220}
-      height={220}
+      width={560}
+      height={560}
       quality={95}
       formats={['AUTO', 'WEBP', 'AVIF']}
       alt="George Melios"
@@ -101,8 +101,9 @@ const ProfileCard = () => (
     />
     <div className="profile-info">
       <h4 className="profile-name">George Melios</h4>
-      <p className="profile-title">Researcher</p>
+      <p className="profile-title">Research Fellow</p>
       <p className="profile-affiliation">London School of Economics</p>
+      <p className="profile-affiliation">Royal Holloway University of London</p>
     </div>
   </StyledProfileCard>
 );

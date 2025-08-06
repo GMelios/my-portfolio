@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import sr from '@utils/sr';
@@ -11,27 +11,31 @@ const StyledProjectsGrid = styled.ul`
 
 const StyledProject = styled.li`
   position: relative;
-  margin-bottom: 20px;
-  padding: 15px 0;
+  margin-bottom: 40px;
+  padding: 30px 0;
   border-bottom: 1px solid var(--light-navy);
 
   &:last-of-type {
     border-bottom: none;
   }
 
-  .publication-title-row {
+  .publication-header {
     display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 15px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 
   .publication-badge {
-    background: #dc2626;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 3px;
+    background: var(--green);
+    color: var(--navy);
+    padding: 6px 12px;
+    border-radius: 4px;
     font-size: var(--fz-xs);
     font-weight: 600;
     text-transform: uppercase;
@@ -44,7 +48,7 @@ const StyledProject = styled.li`
     font-size: clamp(18px, 3vw, 24px);
     font-weight: 600;
     line-height: 1.3;
-    margin: 0;
+    margin: 0 0 10px 0;
 
     a {
       color: inherit;
@@ -78,7 +82,6 @@ const StyledProject = styled.li`
     gap: 12px;
     flex-wrap: wrap;
 
-    button,
     a {
       padding: 8px 16px;
       border: 1px solid var(--green);
@@ -90,12 +93,8 @@ const StyledProject = styled.li`
       letter-spacing: 0.5px;
       border-radius: 4px;
       transition: all 0.3s ease;
-      background: transparent;
-      cursor: pointer;
-      font-family: inherit;
 
-      &:hover,
-      &.active {
+      &:hover {
         background: var(--green);
         color: var(--navy);
       }
@@ -107,23 +106,10 @@ const StyledProject = styled.li`
     font-size: var(--fz-md);
     line-height: 1.5;
     margin-top: 15px;
-    padding: 20px;
-    background: var(--light-navy);
-    border-radius: 4px;
-    border-left: 4px solid var(--green);
   }
 `;
 
 const Featured = () => {
-  const [abstractVisible, setAbstractVisible] = useState({});
-
-  const toggleAbstract = index => {
-    setAbstractVisible(prev => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
-  };
-
   const data = useStaticQuery(graphql`
     {
       featured: allMarkdownRemark(
@@ -138,10 +124,6 @@ const Featured = () => {
               github
               external
               cta
-              authors
-              journal
-              year
-              badge
             }
             html
           }
@@ -174,52 +156,36 @@ const Featured = () => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, github, cta, authors, journal, year, badge } = frontmatter;
+            const { external, title, github, cta } = frontmatter;
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
-                <div className="publication-title-row">
-                  <div className="publication-badge">{badge || 'JoPolitics'}</div>
-                  <h3 className="publication-title">
-                    <a href={external || cta || '#'}>{title}</a>
-                  </h3>
+                <div className="publication-header">
+                  <div className="publication-badge">AJPS</div>
                 </div>
 
+                <h3 className="publication-title">
+                  <a href={external || cta || '#'}>{title}</a>
+                </h3>
+
                 <div className="publication-authors">
-                  {(authors || 'Bouke Klein Teeselink, George Melios')
-                    .split(', ')
-                    .map((author, idx) => (
-                      <span key={idx}>
-                        {author.includes('George Melios') ? (
-                          <span className="author-name">{author}</span>
-                        ) : (
-                          author
-                        )}
-                        {idx <
-                          (authors || 'Bouke Klein Teeselink, George Melios').split(', ').length -
-                            1 && ', '}
-                      </span>
-                    ))}
+                  Mathilde Emeriau, <span className="author-name">Jens Hainmueller</span>, Dominik
+                  Hangartner, and David Laitin
                 </div>
 
                 <div className="publication-journal">
-                  {journal && year ? `${journal}, ${year}` : 'Journal of Politics, Vol 87(2), 2025'}
+                  American Journal of Political Science, 2025
                 </div>
 
                 <div className="publication-links">
                   {cta && <a href={cta}>DOI</a>}
-                  <button disabled>BIB</button>
-                  <button disabled>CODE</button>
-                  <button disabled>PDF</button>
+                  <a href="#bib">BIB</a>
+                  <a href="#html">HTML</a>
+                  <a href="#pdf">PDF</a>
                   {github && <a href={github}>GitHub</a>}
-                  <button
-                    onClick={() => toggleAbstract(i)}
-                    className={abstractVisible[i] ? 'active' : ''}>
-                    Abstract
-                  </button>
                 </div>
 
-                {abstractVisible[i] && html && (
+                {html && (
                   <div
                     className="publication-description"
                     dangerouslySetInnerHTML={{ __html: html }}
