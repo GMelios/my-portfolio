@@ -119,6 +119,10 @@ const StyledLinks = styled.div`
       counter-increment: item 1;
       font-size: var(--fz-xs);
 
+      &.no-number {
+        counter-increment: none;
+      }
+
       a {
         padding: 10px;
         color: white;
@@ -130,6 +134,11 @@ const StyledLinks = styled.div`
           color: white;
           font-size: var(--fz-xxs);
           text-align: right;
+        }
+
+        &.no-number:before {
+          content: '';
+          margin-right: 0;
         }
 
         &:hover {
@@ -223,9 +232,11 @@ const Nav = ({ isHome }) => {
             <StyledLinks>
               <ol>
                 {navLinks &&
-                  navLinks.map(({ url, name }, i) => (
-                    <li key={i}>
-                      <Link to={url}>{name}</Link>
+                  navLinks.map(({ url, name, noNumber }, i) => (
+                    <li key={i} className={noNumber ? 'no-number' : ''}>
+                      <Link to={url} className={noNumber ? 'no-number' : ''}>
+                        {name}
+                      </Link>
                     </li>
                   ))}
               </ol>
@@ -249,10 +260,15 @@ const Nav = ({ isHome }) => {
                 <TransitionGroup component={null}>
                   {isMounted &&
                     navLinks &&
-                    navLinks.map(({ url, name }, i) => (
+                    navLinks.map(({ url, name, noNumber }, i) => (
                       <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
-                        <li key={i} style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
-                          <Link to={url}>{name}</Link>
+                        <li
+                          key={i}
+                          style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}
+                          className={noNumber ? 'no-number' : ''}>
+                          <Link to={url} className={noNumber ? 'no-number' : ''}>
+                            {name}
+                          </Link>
                         </li>
                       </CSSTransition>
                     ))}

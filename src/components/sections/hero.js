@@ -255,7 +255,7 @@ const Hero = () => {
   const items = [one, two, three, four, five];
 
   return (
-    <StyledHeroSection>
+    <StyledHeroSection id="hero">
       <div className="profile-card-container">
         <ProfileCard />
       </div>

@@ -1,6 +1,7 @@
 ---
 date: '4'
 title: 'Sleeping With the Enemy: Partisan Sorting in Online Dating'
+slug: 'dating'
 external: 'https://gmelios.github.io/uploads/dating_v1.pdf'
 authors: 'Yara Sleiman, George Melios, Paul Dolan'
 journal: 'Political Science Research & Methods'

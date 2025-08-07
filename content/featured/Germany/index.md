@@ -2,6 +2,7 @@
 date: '5'
 title: 'Not as bad as I thought: Economic attitudes and motivated reasoning in coalition governments'
 external: 'https://www.georgemelios.com/publication/german/'
+slug: 'germany-coalition'
 authors: 'G. Kavetsos, C. Krekel, George Melios'
 journal: 'Political Psychology'
 year: '2025'

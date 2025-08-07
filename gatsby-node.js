@@ -85,6 +85,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const postTemplate = path.resolve(`src/templates/post.js`);
   const tagTemplate = path.resolve('src/templates/tag.js');
+  const publicationTemplate = path.resolve('src/templates/publication.js');
+  const workingPaperTemplate = path.resolve('src/templates/working-paper.js');
 
   const result = await graphql(`
     {
@@ -98,6 +100,34 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             frontmatter {
               slug
             }
+          }
+        }
+      }
+      publicationsRemark: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/content/featured/" } }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              slug
+            }
+            fileAbsolutePath
+          }
+        }
+      }
+      workingPapersRemark: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/content/working-papers/" } }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              slug
+            }
+            fileAbsolutePath
           }
         }
       }
@@ -123,6 +153,34 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: node.frontmatter.slug,
       component: postTemplate,
       context: {},
+    });
+  });
+
+  // Create publication detail pages
+  const publications = result.data.publicationsRemark.edges;
+
+  publications.forEach(({ node }) => {
+    const slug = node.frontmatter.slug || _.kebabCase(node.frontmatter.title);
+    createPage({
+      path: `/publications/${slug}`,
+      component: publicationTemplate,
+      context: {
+        slug: slug,
+      },
+    });
+  });
+
+  // Create working paper detail pages
+  const workingPapers = result.data.workingPapersRemark.edges;
+
+  workingPapers.forEach(({ node }) => {
+    const slug = node.frontmatter.slug || _.kebabCase(node.frontmatter.title);
+    createPage({
+      path: `/working-papers/${slug}`,
+      component: workingPaperTemplate,
+      context: {
+        slug: slug,
+      },
     });
   });
 

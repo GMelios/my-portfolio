@@ -95,14 +95,25 @@ const Teaching = () => {
 
   const teachingData = [
     {
-      course: 'Teaching Portfolio',
-      institution: 'Coming Soon',
-      level: '',
-      range: '',
-      description: [
-        'Teaching experience and course information will be populated here.',
-        'This section will include courses taught, teaching philosophy, and student feedback.',
-      ],
+      course: 'Causal Inference for Behavioural Science',
+      institution: 'London School of Economics',
+      level: 'M.Sc.',
+      range: '2021-2025',
+      description: ['Module leader', '~80 students per year'],
+    },
+    {
+      course: 'Business Economics',
+      institution: 'Queen Mary University of London',
+      level: 'B.Sc.',
+      range: '2024-2025',
+      description: ['Module leader', '~140 students'],
+    },
+    {
+      course: 'Data Science for Social Scientists',
+      institution: 'London School of Economics',
+      level: 'B.Sc.',
+      range: '2021-2022',
+      description: ['Teaching Fellow, Seminar leader', '~40 students'],
     },
   ];
 

@@ -2,6 +2,7 @@
 date: '3'
 title: 'Religion, Identity, and Preferences'
 external: 'https://www.georgemelios.com/wp/religion/'
+slug: 'religion-identity'
 authors: 'Bouke Klein Teeselink, George Melios'
 journal: 'Working Paper'
 year: '2025'

@@ -9,6 +9,7 @@ export { default as Email } from './email';
 export { default as Footer } from './footer';
 export { default as Hero } from './sections/hero';
 export { default as Publications } from './sections/featured';
+export { default as WorkingPapers } from './sections/working-papers';
 export { default as Teaching } from './sections/teaching';
 export { default as Projects } from './sections/projects';
 export { default as Media } from './sections/media';

@@ -1,13 +1,15 @@
 ---
 date: '2'
 title: 'Partisanship, political alignment, and charitable donations'
+slug: 'donations'
 external: 'https://www.georgemelios.com/publication/donations/'
 authors: 'Bouke Klein Teeselink, George Melios'
-journal: 'Public Choice'
+journal: 'Public Choice, Vol. 203, pages 523–538,'
 year: '2025'
 badge: null
 bib: null
 code: null
+pdf: 'https://link.springer.com/article/10.1007/s11127-024-01215-8'
 tech:
 ---
 

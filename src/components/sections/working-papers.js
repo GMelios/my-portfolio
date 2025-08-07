@@ -115,7 +115,7 @@ const StyledProject = styled.li`
   }
 `;
 
-const Featured = () => {
+const WorkingPapers = () => {
   const [abstractVisible, setAbstractVisible] = useState({});
 
   const toggleAbstract = index => {
@@ -127,8 +127,8 @@ const Featured = () => {
 
   const data = useStaticQuery(graphql`
     {
-      featured: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/featured/" } }
+      workingPapers: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/content/working-papers/" } }
         sort: { fields: [frontmatter___date], order: ASC }
       ) {
         edges {
@@ -154,7 +154,7 @@ const Featured = () => {
     }
   `);
 
-  const featuredProjects = data.featured.edges.filter(({ node }) => node);
+  const workingPapers = data.workingPapers.edges.filter(({ node }) => node);
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -169,14 +169,14 @@ const Featured = () => {
   }, []);
 
   return (
-    <section id="featured">
+    <section id="working-papers">
       <h2 className="numbered-heading" ref={revealTitle}>
-        Recent Publications
+        Working Papers
       </h2>
 
       <StyledProjectsGrid>
-        {featuredProjects &&
-          featuredProjects.map(({ node }, i) => {
+        {workingPapers &&
+          workingPapers.map(({ node }, i) => {
             const { frontmatter, html } = node;
             const { external, title, github, cta, slug, authors, journal, year, badge, bib, code } =
               frontmatter;
@@ -187,7 +187,7 @@ const Featured = () => {
                   {badge && <div className="publication-badge">{badge}</div>}
                   <h3 className="publication-title">
                     {slug ? (
-                      <Link to={`/publications/${slug}`}>{title}</Link>
+                      <Link to={`/working-papers/${slug}`}>{title}</Link>
                     ) : (
                       <a href={external || cta || '#'}>{title}</a>
                     )}
@@ -212,11 +212,11 @@ const Featured = () => {
                 </div>
 
                 <div className="publication-journal">
-                  {journal && year ? `${journal}, ${year}` : 'Journal of Politics, Vol 87(2), 2025'}
+                  {journal && year ? `${journal}, ${year}` : 'Working Paper'}
                 </div>
 
                 <div className="publication-links">
-                  {cta && <a href={cta}>DOI</a>}
+                  {cta && <a href={cta}>PAPER</a>}
                   <button
                     onClick={() => toggleAbstract(i)}
                     className={abstractVisible[i] ? 'active' : ''}>
@@ -242,4 +242,4 @@ const Featured = () => {
   );
 };
 
-export default Featured;
+export default WorkingPapers;
