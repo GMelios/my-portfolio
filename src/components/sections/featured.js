@@ -28,8 +28,8 @@ const StyledProject = styled.li`
   }
 
   .publication-badge {
-    background: #7d485d;
-    color: #f9f7f4;
+    background: #dc2626;
+    color: white;
     padding: 4px 8px;
     border-radius: 3px;
     font-size: var(--fz-xs);
