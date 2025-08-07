@@ -1,12 +1,11 @@
 ---
-date: '1.5'
-title: 'Remnants of Civil War: Immediate and long-run effects of electoral oppression in cold war Greece'
+date: '1'
+title: 'Cold War Bras de fer: Propaganda, Mobilisation, and Repression in Greece'
 external: 'https://www.georgemelios.com/1961/'
-slug: 'greece-civil-war'
 authors: 'Vassileios Logothetis, George Melios'
 journal: 'Working Paper'
 year: '2025'
-badge: null
+badge: 'Job Market Paper'
 bib: null
 code: null
 tech:
