@@ -50,7 +50,13 @@ const StyledHeroSection = styled.section`
     align-items: flex-start;
     gap: 30px;
     max-width: none;
-    padding: 0 20px;
+    padding: 120px 20px 0 20px;
+    min-height: calc(100vh - 120px);
+  }
+
+  @media (max-width: 480px) {
+    padding: 120px 15px 0 15px;
+    gap: 20px;
   }
 
   @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
