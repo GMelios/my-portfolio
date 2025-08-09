@@ -1,11 +1,12 @@
 ---
 date: '1'
-title: 'Cold War Bras de fer: Propaganda, Mobilisation, and Repression in Greece'
+title: 'Cold War ’Bras de Fer’: Propaganda, Mobilisation, and Repression in Greece'
 external: 'https://www.georgemelios.com/1961/'
+slug: 'greece-civil-war'
 authors: 'Vassileios Logothetis, George Melios'
 journal: 'Working Paper'
 year: '2025'
-badge: 'Job Market Paper'
+badge: null
 bib: null
 code: null
 tech:

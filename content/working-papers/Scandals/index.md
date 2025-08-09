@@ -1,5 +1,5 @@
 ---
-date: '2'
+date: '3'
 title: 'Religion, Identity, and Preferences'
 external: 'https://www.georgemelios.com/wp/religion/'
 slug: 'religion-identity'

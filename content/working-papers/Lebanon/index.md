@@ -1,5 +1,5 @@
 ---
-date: '3'
+date: '2022-01-01'
 title: 'Who Needs Security in a Crisis? Evidence from an In-the-Field Choice Experiment in Lebanon'
 external: 'https://www.georgemelios.com/wp/dce/'
 slug: 'lebanon-security'
