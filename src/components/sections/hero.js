@@ -40,7 +40,7 @@ const StyledHeroSection = styled.section`
   }
 
   @media (max-width: 900px) {
-    gap: 20px;
+    gap: 30px;
     padding: 0 20px;
   }
 
@@ -48,15 +48,17 @@ const StyledHeroSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 30px;
+    gap: 40px;
     max-width: none;
-    padding: 120px 20px 0 20px;
-    min-height: calc(100vh - 120px);
+    padding: 140px 20px 40px 20px;
+    min-height: 100vh;
+    height: auto;
+    justify-content: flex-start;
   }
 
   @media (max-width: 480px) {
-    padding: 120px 15px 0 15px;
-    gap: 20px;
+    padding: 140px 15px 40px 15px;
+    gap: 30px;
   }
 
   @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
@@ -154,7 +156,7 @@ const StyledHeroSection = styled.section`
 
   .hero-buttons {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     margin-top: 50px;
 
     @media (max-width: 480px) {
