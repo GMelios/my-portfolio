@@ -2,7 +2,7 @@
 date: '4'
 title: 'Sleeping With the Enemy: Partisan Sorting in Online Dating'
 slug: 'dating'
-external: 'https://gmelios.github.io/uploads/dating_v1.pdf'
+external: 'https://www.cambridge.org/core/journals/political-science-research-and-methods/article/sleeping-with-the-enemy-partisanship-and-tolerance-in-online-dating/628B2BD08EA384301E87E577305F4865?utm_date=20250902&utm_id=1756801200&utm_campaign=Open%20Access,RAM&utm_source=facebook&utm_medium=social&utm_content'
 authors: 'Yara Sleiman, George Melios, Paul Dolan'
 journal: 'Political Science Research & Methods'
 year: '2025'
@@ -12,7 +12,7 @@ code: null
 tech:
 ---'4'
 title: '‘Sleeping With the Enemy’: Partisan Sorting in Online Dating'
-external: 'https://gmelios.github.io/uploads/dating_v1.pdf'
+external: 'https://www.cambridge.org/core/journals/political-science-research-and-methods/article/sleeping-with-the-enemy-partisanship-and-tolerance-in-online-dating/628B2BD08EA384301E87E577305F4865?utm_date=20250902&utm_id=1756801200&utm_campaign=Open%20Access,RAM&utm_source=facebook&utm_medium=social&utm_content'
 authors: 'Yara Sleiman, George Melios, Paul Dolan'
 journal: 'Political Science Research & Methods'
 year: '2025'
