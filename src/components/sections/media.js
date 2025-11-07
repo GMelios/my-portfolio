@@ -105,12 +105,14 @@ const Media = () => {
 
   const mediaData = [
     {
-      title: 'Weather to Protest Paper',
+      title: 'Weather to Protest mentioned',
       outlet: '',
       type: '',
       date: '',
       url: '',
       description: [
+        'Weather to Protest Paper (2024) covered by The Guardian, BBC News, Al Jazeera, Reuters, and others.',
+        'This section will include podcast appearances, news interviews, and published articles.',
         <>
           Referenced by{' '}
           <a
