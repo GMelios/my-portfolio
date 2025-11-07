@@ -10,7 +10,7 @@ const StyledRotatingText = styled.span`
 `;
 
 const RotatingText = () => {
-  const texts = ['political decisions', 'social behaviour', 'labour preferences'];
+  const texts = ['political decisions', 'pro-social behaviour', 'labour preferences'];
 
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayText, setDisplayText] = useState('voter behavior');
