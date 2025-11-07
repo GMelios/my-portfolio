@@ -101,18 +101,56 @@ const Media = () => {
     }
 
     sr.reveal(revealContainer.current, srConfig());
-  }, []);
+  }, [prefersReducedMotion]);
 
   const mediaData = [
     {
-      title: 'Media Appearances',
-      outlet: 'Coming Soon',
+      title: 'Papers covered in the Media',
+      outlet: '',
       type: '',
       date: '',
       url: '',
       description: [
-        'Media appearances, interviews, and press coverage will be featured here.',
+        'Weather to Protest Paper (2024) covered by The Guardian, BBC News, Al Jazeera, Reuters, and others.',
         'This section will include podcast appearances, news interviews, and published articles.',
+        <>
+          Referenced by{' '}
+          <a
+            href="https://www.nature.com/articles/d41586-024-02082-5"
+            target="_blank"
+            rel="noopener noreferrer">
+            Nature
+          </a>
+          ,{' '}
+          <a
+            href="https://www.economist.com/graphic-detail/2021/05/22/rioting-amid-demonstrations-for-racial-justice-may-have-helped-donald-trump?fbclid=IwAR2gBMvckLJ2dFLUIWRgVgRuczpWFi2BFqoLlKUef650T2xkj_yGr5AJ9_0"
+            target="_blank"
+            rel="noopener noreferrer">
+            Economist
+          </a>
+          ,{' '}
+          <a
+            href="https://www.thenation.com/article/politics/tyre-nichols-killing-police-democrats/"
+            target="_blank"
+            rel="noopener noreferrer">
+            The Nation
+          </a>
+          ,{' '}
+          <a
+            href="https://dailycaller.com/2021/05/21/blm-riots-joe-biden-kenosha-jacob-blake/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Daily Caller
+          </a>
+          , and{' '}
+          <a
+            href="https://www.resilience.org/stories/2023-01-31/what-determines-the-success-of-movements-today/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Social Change Lab
+          </a>
+          .
+        </>,
       ],
     },
   ];
