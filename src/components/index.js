@@ -13,4 +13,5 @@ export { default as WorkingPapers } from './sections/working-papers';
 export { default as Teaching } from './sections/teaching';
 export { default as Projects } from './sections/projects';
 export { default as Media } from './sections/media';
+export { default as Consultancy } from './sections/consultancy';
 export { default as Contact } from './sections/contact';

@@ -8,6 +8,7 @@ import {
   Publications,
   WorkingPapers,
   Projects,
+  Consultancy,
   Media,
   Contact,
 } from '@components';
@@ -24,6 +25,7 @@ const IndexPage = ({ location }) => (
       <WorkingPapers />
       <Teaching />
       <Projects />
+      <Consultancy />
       <Media />
       <Contact />
     </StyledMainContainer>
