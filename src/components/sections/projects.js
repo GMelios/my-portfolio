@@ -265,7 +265,9 @@ const Projects = () => {
 
   return (
     <StyledProjectsSection id="projects">
-      <h2 ref={revealTitle}>04. Funded Projects</h2>
+      <h2 className="numbered-heading" ref={revealTitle}>
+        Funded Projects
+      </h2>
 
       <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
         view the archive
