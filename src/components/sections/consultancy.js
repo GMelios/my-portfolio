@@ -38,8 +38,10 @@ const Consultancy = () => {
 
       <div className="inner">
         <p>
-          George has provided specialist consulting and delivered workshops/talks to institutions
-          across the public and private sectors.
+          George is the founder and CEO of Ethos Lab, a research and innovation consultancy that
+          uses behavioural insights and advanced data analytics to improve policy outcomes and
+          people's lives. Though this and other activities, he has provided specialist consulting
+          and delivered workshops/talks to institutions across the public and private sectors.
         </p>
         <p>
           With his wealth of experience and expertise in evaluating public policies and behavioural
