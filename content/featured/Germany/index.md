@@ -4,7 +4,7 @@ title: 'Not as bad as I thought: Economic attitudes and motivated reasoning in c
 external: 'https://onlinelibrary.wiley.com/doi/full/10.1111/pops.70022'
 slug: 'germany-coalition'
 authors: 'G. Kavetsos, C. Krekel, George Melios'
-journal: 'Political Psychology, Volume 46, Issue 6, Pages 1987-2006'
+journal: 'Political Psychology, Vol, 46, Issue 6, pages 1987-2006'
 year: '2025'
 badge: null
 bib: null

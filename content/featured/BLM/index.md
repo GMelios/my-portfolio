@@ -4,7 +4,7 @@ title: 'Weather to Protest: The Effect of Black Lives Matter Protests on the 202
 external: 'https://www.georgemelios.com/publication/blm/'
 slug: 'blm-protests'
 authors: 'Bouke Klein Teeselink, George Melios'
-journal: 'Political Behavior, Volume 47, pages 1829–1851'
+journal: 'Political Behavior, Vol. 47, pages 1829–1851'
 year: '2025'
 badge: null
 bib: null
