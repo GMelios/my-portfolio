@@ -4,7 +4,7 @@ title: 'Origin of (A)symmetry: The Evolution of Out-Party Distrust in the United
 slug: 'asymmetries'
 external: 'https://www.journals.uchicago.edu/doi/10.1086/732971'
 authors: 'Bouke Klein Teeselink, George Melios'
-journal: 'Journal of Politics, vol 87(2), Chicago University Press'
+journal: 'Journal of Politics, vol 87, Issue 2'
 year: '2025'
 badge: null
 bib: ''
