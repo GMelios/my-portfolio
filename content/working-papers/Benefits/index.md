@@ -1,7 +1,7 @@
 ---
 date: '3'
 title: 'The Employment Effects of Disability Benefits Without Work Restrictions'
-external: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5378340
+external: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5378340'
 slug: 'benefits'
 authors: 'Bouke Klein Teeselink, George Melios'
 journal: 'Working Paper'
