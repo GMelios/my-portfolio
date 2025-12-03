@@ -218,7 +218,7 @@ const Hero = () => {
   );
   const three = (
     <h3 className="medium-heading" style={{ marginTop: '0px' }}>
-      I use causal inference to study <RotatingText />
+      I use applied methods to study <RotatingText />
     </h3>
   );
   const four = (

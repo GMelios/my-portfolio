@@ -95,10 +95,17 @@ const Teaching = () => {
 
   const teachingData = [
     {
+      course: 'Evaluating Public Policy',
+      institution: 'Kingæs College London',
+      level: 'M.Sc.',
+      range: '2025-2026',
+      description: ['Module leader', '~100 students'],
+    },
+    {
       course: 'Causal Inference for Behavioural Science',
       institution: 'London School of Economics',
       level: 'M.Sc.',
-      range: '2021-2025',
+      range: '2022-2025',
       description: ['Module leader', '~80 students per year'],
     },
     {
