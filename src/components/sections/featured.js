@@ -138,6 +138,7 @@ const Featured = () => {
               tech
               github
               external
+              pdf
               cta
               slug
               authors
@@ -178,7 +179,7 @@ const Featured = () => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, github, cta, slug, authors, journal, year, badge, bib, code } =
+            const { external, title, github, cta, slug, authors, journal, year, badge, bib, code, pdf } =
               frontmatter;
 
             return (
@@ -216,16 +217,39 @@ const Featured = () => {
                 </div>
 
                 <div className="publication-links">
-                  {cta && <a href={cta}>DOI</a>}
+                  {external ? (
+                    <a href={external} target="_blank" rel="noopener noreferrer">
+                      Publisher
+                    </a>
+                  ) : (
+                    <button disabled>Publisher</button>
+                  )}
+                  {pdf ? (
+                    <a href={pdf} target="_blank" rel="noopener noreferrer">
+                      PDF
+                    </a>
+                  ) : (
+                    <button disabled>PDF</button>
+                  )}
+                  {code ? (
+                    <a href={code} target="_blank" rel="noopener noreferrer">
+                      Code
+                    </a>
+                  ) : (
+                    <button disabled>Code</button>
+                  )}
+                  {bib ? (
+                    <a href={bib} download>
+                      Cite
+                    </a>
+                  ) : (
+                    <button disabled>Cite</button>
+                  )}
                   <button
                     onClick={() => toggleAbstract(i)}
                     className={abstractVisible[i] ? 'active' : ''}>
                     Abstract
                   </button>
-                  {bib ? <a href={bib}>BIB</a> : <button disabled>BIB</button>}
-                  {code ? <a href={code}>CODE</a> : <button disabled>CODE</button>}
-                  <button disabled>PDF</button>
-                  {github && <a href={github}>GitHub</a>}
                 </div>
 
                 {abstractVisible[i] && html && (

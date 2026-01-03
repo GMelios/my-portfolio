@@ -3,13 +3,15 @@ date: '1'
 title: 'Origin of (A)symmetry: The Evolution of Out-Party Distrust in the United States'
 slug: 'asymmetries'
 external: 'https://www.journals.uchicago.edu/doi/10.1086/732971'
+pdf: 'https://www.journals.uchicago.edu/doi/pdf/10.1086/732971'
 authors: 'Bouke Klein Teeselink, George Melios'
 journal: 'Journal of Politics, Vol 87, Issue 2'
 year: '2025'
 badge: null
-bib: ''
-code: ''
+bib: '/bib/asymmetry.bib'
+code: null
+cta: 'https://doi.org/10.1086/732971'
 tech:
 ---
 
-Abstract: Partisans tend to be skeptical of governments only when they are led by the other side. This president-in-power effect threatens democratic functioning by limiting partisans’ ability to hold their own party accountable. As polarization rises, the problems associated with this phenomenon are likely to intensify. This article examines the evolution and drivers of the president-in-power effect since 1974. Mirroring the general rise in polarization, we document a steady increase in the president-in-power effect. Our research demonstrates that this increase can be attributed to an intensification of partisan identification, combined with a growing perceived ideological distance from the opposed party. Contrasting the narrative that polarization is stronger on the right, however, we find evidence that the president-in-power effect has grown faster for Democrats than for Republicans. To explain this pattern, we show that highly educated people, who display a stronger president-in-power effect, have shifted toward the left in recent years.
+Abstract: Partisans tend to be skeptical of governments only when they are led by the other side. This president-in-power effect threatens democratic functioning by limiting partisans' ability to hold their own party accountable. As polarization rises, the problems associated with this phenomenon are likely to intensify. This article examines the evolution and drivers of the president-in-power effect since 1974. Mirroring the general rise in polarization, we document a steady increase in the president-in-power effect. Our research demonstrates that this increase can be attributed to an intensification of partisan identification, combined with a growing perceived ideological distance from the opposed party. Contrasting the narrative that polarization is stronger on the right, however, we find evidence that the president-in-power effect has grown faster for Democrats than for Republicans. To explain this pattern, we show that highly educated people, who display a stronger president-in-power effect, have shifted toward the left in recent years.

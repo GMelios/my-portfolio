@@ -142,7 +142,7 @@ const StyledWorkingPaperPage = styled.main`
 const WorkingPaperTemplate = ({ data, location }) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
-  const { title, authors, journal, year, cta, bib, code, github, external } = frontmatter;
+  const { title, authors, journal, year, cta, bib, code, github, external, pdf } = frontmatter;
 
   return (
     <Layout location={location}>
@@ -184,22 +184,12 @@ const WorkingPaperTemplate = ({ data, location }) => {
         </div>
 
         <div className="publication-actions">
-          {external && (
-            <a href={external} target="_blank" rel="noopener noreferrer">
-              Paper
-            </a>
-          )}
-          {cta && (
-            <a href={cta} target="_blank" rel="noopener noreferrer">
-              DOI
-            </a>
-          )}
-          {bib ? (
-            <a href={bib} target="_blank" rel="noopener noreferrer">
-              Cite
+          {pdf ? (
+            <a href={pdf} target="_blank" rel="noopener noreferrer">
+              PDF
             </a>
           ) : (
-            <button disabled>Cite</button>
+            <button disabled>PDF</button>
           )}
           {code ? (
             <a href={code} target="_blank" rel="noopener noreferrer">
@@ -208,11 +198,12 @@ const WorkingPaperTemplate = ({ data, location }) => {
           ) : (
             <button disabled>Code</button>
           )}
-          <button disabled>Dataset</button>
-          {github && (
-            <a href={github} target="_blank" rel="noopener noreferrer">
-              GitHub
+          {bib ? (
+            <a href={bib} download>
+              Cite
             </a>
+          ) : (
+            <button disabled>Cite</button>
           )}
         </div>
 
@@ -241,6 +232,7 @@ WorkingPaperTemplate.propTypes = {
         code: PropTypes.string,
         github: PropTypes.string,
         external: PropTypes.string,
+        pdf: PropTypes.string,
         slug: PropTypes.string,
       }),
     }),
@@ -264,6 +256,7 @@ export const pageQuery = graphql`
         code
         github
         external
+        pdf
         slug
       }
     }

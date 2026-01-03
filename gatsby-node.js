@@ -75,6 +75,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       badge: String
       bib: String
       code: String
+      pdf: String
     }
   `;
 
