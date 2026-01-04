@@ -96,7 +96,7 @@ const Teaching = () => {
   const teachingData = [
     {
       course: 'Evaluating Public Policy',
-      institution: 'Kingæs College London',
+      institution: "King's College London",
       level: 'M.Sc.',
       range: '2025-2026',
       description: ['Module leader', '~100 students'],
