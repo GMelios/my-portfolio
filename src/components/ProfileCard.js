@@ -102,7 +102,6 @@ const ProfileCard = () => (
     <div className="profile-info">
       <p className="profile-title">Researcher</p>
       <p className="profile-affiliation">London School of Economics</p>
-      <p className="profile-affiliation">Royal Holloway University of London</p>
       <p className="profile-affiliation">King's College London</p>
     </div>
   </StyledProfileCard>

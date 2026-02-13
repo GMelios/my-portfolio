@@ -1,14 +1,16 @@
 ---
 date: '3'
 title: 'Weather to Protest: The Effect of Black Lives Matter Protests on the 2020 Presidential Election'
-external: 'https://www.georgemelios.com/publication/blm/'
+external: 'https://link.springer.com/article/10.1007/s11109-024-09953-7'
+cta: 'https://doi.org/10.1007/s11109-024-09953-7'
 slug: 'blm-protests'
 authors: 'Bouke Klein Teeselink, George Melios'
 journal: 'Political Behavior, Vol. 47, pages 1829–1851'
 year: '2025'
 badge: null
-bib: null
+bib: '/papers/blm-protests.bib'
 code: null
+pdf: '/papers/blm-protests.pdf'
 tech:
   - Political Behavior
   - Event Studies

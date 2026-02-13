@@ -7,8 +7,9 @@ authors: 'Bouke Klein Teeselink, George Melios'
 journal: 'Working Paper'
 year: '2025'
 badge: null
-bib: null
+bib: '/papers/benefits.bib'
 code: null
+pdf: '/papers/benefits.pdf'
 tech:
 showInProjects: true
 ---

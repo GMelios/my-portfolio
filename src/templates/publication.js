@@ -142,7 +142,7 @@ const StyledPublicationPage = styled.main`
 const PublicationTemplate = ({ data, location }) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
-  const { title, authors, journal, year, cta, bib, code, github, external } = frontmatter;
+  const { title, authors, journal, year, cta, bib, code, github, external, pdf } = frontmatter;
 
   return (
     <Layout location={location}>
@@ -184,10 +184,16 @@ const PublicationTemplate = ({ data, location }) => {
         </div>
 
         <div className="publication-actions">
-          {external && (
+          {pdf ? (
+            <a href={pdf} target="_blank" rel="noopener noreferrer">
+              PDF
+            </a>
+          ) : external ? (
             <a href={external} target="_blank" rel="noopener noreferrer">
               PDF
             </a>
+          ) : (
+            <button disabled>PDF</button>
           )}
           {cta && (
             <a href={cta} target="_blank" rel="noopener noreferrer">
@@ -239,6 +245,7 @@ PublicationTemplate.propTypes = {
         cta: PropTypes.string,
         bib: PropTypes.string,
         code: PropTypes.string,
+        pdf: PropTypes.string,
         github: PropTypes.string,
         external: PropTypes.string,
         slug: PropTypes.string,
@@ -262,6 +269,7 @@ export const pageQuery = graphql`
         cta
         bib
         code
+        pdf
         github
         external
         slug

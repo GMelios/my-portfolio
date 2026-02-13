@@ -146,6 +146,7 @@ const Featured = () => {
               badge
               bib
               code
+              pdf
             }
             html
           }
@@ -178,8 +179,20 @@ const Featured = () => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, github, cta, slug, authors, journal, year, badge, bib, code } =
-              frontmatter;
+            const {
+              external,
+              title,
+              github,
+              cta,
+              slug,
+              authors,
+              journal,
+              year,
+              badge,
+              bib,
+              code,
+              pdf,
+            } = frontmatter;
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
@@ -224,7 +237,13 @@ const Featured = () => {
                   </button>
                   {bib ? <a href={bib}>BIB</a> : <button disabled>BIB</button>}
                   {code ? <a href={code}>CODE</a> : <button disabled>CODE</button>}
-                  <button disabled>PDF</button>
+                  {pdf ? (
+                    <a href={pdf} target="_blank" rel="noopener noreferrer">
+                      PDF
+                    </a>
+                  ) : (
+                    <button disabled>PDF</button>
+                  )}
                   {github && <a href={github}>GitHub</a>}
                 </div>
 

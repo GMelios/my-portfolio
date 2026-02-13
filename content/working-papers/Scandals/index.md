@@ -1,13 +1,13 @@
 ---
 date: '2'
 title: 'Religion, Identity, and Preferences'
-external: 'https://www.georgemelios.com/wp/religion/'
+external: ''
 slug: 'religion-identity'
 authors: 'Bouke Klein Teeselink, George Melios'
 journal: 'Working Paper'
 year: '2025'
 badge: null
-bib: null
+bib: '/papers/religion-identity.bib'
 code: null
 tech:
 showInProjects: true

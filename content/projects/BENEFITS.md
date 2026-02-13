@@ -1,7 +1,7 @@
 ---
 date: '2025-01-01'
 title: 'BENEFITS - Measuring the Value added of Social Services'
-external: 'https://www.georgemelios.com/project/benefits/'
+external: ''
 tech:
   - Public Policy
   - Social Services

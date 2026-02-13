@@ -1,13 +1,13 @@
 ---
 date: '1'
 title: 'Propaganda, Mobilisation, and Repression in Greece'
-external: 'https://www.georgemelios.com/1961/'
+external: ''
 slug: 'greece-civil-war'
 authors: 'Vassileios Logothetis, George Melios'
 journal: 'Working Paper'
 year: '2025'
 badge: null
-bib: null
+bib: '/papers/greece-civil-war.bib'
 code: null
 tech:
 showInProjects: true

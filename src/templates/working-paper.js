@@ -142,7 +142,7 @@ const StyledWorkingPaperPage = styled.main`
 const WorkingPaperTemplate = ({ data, location }) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
-  const { title, authors, journal, year, cta, bib, code, github, external } = frontmatter;
+  const { title, authors, journal, year, cta, bib, code, github, external, pdf } = frontmatter;
 
   return (
     <Layout location={location}>
@@ -184,6 +184,17 @@ const WorkingPaperTemplate = ({ data, location }) => {
         </div>
 
         <div className="publication-actions">
+          {pdf ? (
+            <a href={pdf} target="_blank" rel="noopener noreferrer">
+              PDF
+            </a>
+          ) : external ? (
+            <a href={external} target="_blank" rel="noopener noreferrer">
+              Paper
+            </a>
+          ) : (
+            <button disabled>PDF</button>
+          )}
           {external && (
             <a href={external} target="_blank" rel="noopener noreferrer">
               Paper
@@ -239,6 +250,7 @@ WorkingPaperTemplate.propTypes = {
         cta: PropTypes.string,
         bib: PropTypes.string,
         code: PropTypes.string,
+        pdf: PropTypes.string,
         github: PropTypes.string,
         external: PropTypes.string,
         slug: PropTypes.string,
@@ -262,6 +274,7 @@ export const pageQuery = graphql`
         cta
         bib
         code
+        pdf
         github
         external
         slug

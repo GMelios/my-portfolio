@@ -242,11 +242,7 @@ const Hero = () => {
       <a className="email-link" href={`mailto:${email}`} target="_blank" rel="noreferrer">
         Get In Touch
       </a>
-      <a
-        className="email-link"
-        href="https://georgemelios.com/1961"
-        target="_blank"
-        rel="noreferrer">
+      <a className="email-link" href="/working-papers/greece-civil-war">
         Job Market Paper
       </a>
     </div>
