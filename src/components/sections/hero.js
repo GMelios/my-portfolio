@@ -48,9 +48,12 @@ const StyledHeroSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 30px;
+    gap: 10px;
     max-width: none;
     padding: 0 20px;
+    min-height: auto;
+    height: auto;
+    padding-top: var(--nav-height);
   }
 
   @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
@@ -81,6 +84,9 @@ const StyledHeroSection = styled.section`
     @media (max-width: 768px) {
       height: auto;
       justify-content: flex-start;
+      flex-shrink: 0;
+      overflow: visible;
+      z-index: 1;
     }
   }
 

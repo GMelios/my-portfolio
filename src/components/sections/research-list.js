@@ -1,22 +1,39 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import sr from '@utils/sr';
-import { srConfig } from '@config';
-import { usePrefersReducedMotion } from '@hooks';
 
-const StyledWorkingPapersSection = styled.section``;
+const StyledResearchList = styled.div`
+  margin-bottom: 60px;
 
-const StyledPaperList = styled.ul`
-  ${({ theme }) => theme.mixins.resetList};
-`;
+  .section-title {
+    font-size: var(--fz-heading);
+    color: var(--lightest-slate);
+    margin: 0 0 30px 0;
+    font-weight: 700;
 
-const StyledPaper = styled.li`
-  padding: 18px 0;
-  border-bottom: 1px solid var(--light-navy);
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: var(--lightest-navy);
+      margin-top: 10px;
+    }
+  }
 
-  &:last-of-type {
-    border-bottom: none;
+  .paper-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .paper-item {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--light-navy);
+
+    &:last-of-type {
+      border-bottom: none;
+    }
   }
 
   .paper-citation {
@@ -42,6 +59,11 @@ const StyledPaper = styled.li`
     .paper-title-text {
       color: var(--lightest-slate);
       font-weight: 500;
+    }
+
+    .journal-name {
+      font-weight: 700;
+      color: var(--dark-slate);
     }
 
     .paper-status {
@@ -99,9 +121,55 @@ const StyledPaper = styled.li`
     border-radius: 4px;
     border-left: 3px solid var(--green);
   }
+
+  .paper-media {
+    margin-top: 8px;
+    font-size: var(--fz-sm);
+    color: var(--slate);
+
+    strong {
+      color: var(--dark-slate);
+    }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  /* WIP items are simpler */
+  .wip-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--light-navy);
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  .wip-citation {
+    font-size: var(--fz-lg);
+    line-height: 1.6;
+    color: var(--dark-slate);
+    margin: 0;
+    font-style: italic;
+  }
 `;
 
-const WorkingPapers = () => {
+const formatAuthors = (authors, highlightName = 'George Melios') => {
+  if (!authors) {return null;}
+  return authors.split(', ').map((author, idx, arr) => (
+    <span key={idx}>
+      {author.includes(highlightName) ? <span className="author-self">{author}</span> : author}
+      {idx < arr.length - 1 && ', '}
+    </span>
+  ));
+};
+
+const ResearchList = ({ title, papers, type = 'publication' }) => {
   const [abstractVisible, setAbstractVisible] = useState({});
 
   const toggleAbstract = index => {
@@ -111,79 +179,45 @@ const WorkingPapers = () => {
     }));
   };
 
-  const data = useStaticQuery(graphql`
-    {
-      workingPapers: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/working-papers/" } }
-        sort: { fields: [frontmatter___date], order: ASC }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              tech
-              github
-              external
-              cta
-              slug
-              authors
-              journal
-              year
-              badge
-              bib
-              code
-              pdf
-            }
-            html
-          }
-        }
-      }
-    }
-  `);
-
-  const workingPapers = data.workingPapers.edges.filter(({ node }) => node);
-  const revealTitle = useRef(null);
-  const revealPapers = useRef([]);
-  const prefersReducedMotion = usePrefersReducedMotion();
-
-  useEffect(() => {
-    if (prefersReducedMotion) {
-      return;
-    }
-
-    sr.reveal(revealTitle.current, srConfig());
-    revealPapers.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
-  }, []);
-
-  const formatAuthors = authors => {
-    if (!authors) {return null;}
-    return authors.split(', ').map((author, idx, arr) => (
-      <span key={idx}>
-        {author.includes('George Melios') ? <span className="author-self">{author}</span> : author}
-        {idx < arr.length - 1 && ', '}
-      </span>
-    ));
-  };
+  if (type === 'wip') {
+    return (
+      <StyledResearchList>
+        <h2 className="section-title">{title}</h2>
+        <ul className="paper-list">
+          {papers.map((paper, i) => (
+            <li className="wip-item" key={i}>
+              <p className="wip-citation">
+                {paper.title}
+                {paper.authors && <span style={{ fontStyle: 'normal' }}> — {paper.authors}</span>}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </StyledResearchList>
+    );
+  }
 
   return (
-    <StyledWorkingPapersSection id="working-papers">
-      <h2 className="numbered-heading" ref={revealTitle}>
-        Working Papers
-      </h2>
-
-      <StyledPaperList>
-        {workingPapers.map(({ node }, i) => {
+    <StyledResearchList>
+      <h2 className="section-title">{title}</h2>
+      <ul className="paper-list">
+        {papers.map(({ node }, i) => {
           const { frontmatter, html } = node;
-          const { external, title, github, cta, slug, authors, journal, year, bib, code, pdf } =
+          const { title, authors, journal, year, cta, external, pdf, bib, code, github, slug } =
             frontmatter;
 
-          const paperUrl = slug ? `/working-papers/${slug}` : external || cta || null;
+          const paperUrl = slug
+            ? type === 'working-paper'
+              ? `/working-papers/${slug}`
+              : `/publications/${slug}`
+            : external || cta || null;
 
+          // Parse journal for status display
           const isRnR = journal && journal.startsWith('R & R');
           const isWorkingPaper = journal === 'Working Paper';
 
           return (
-            <StyledPaper key={i} ref={el => (revealPapers.current[i] = el)}>
+            <li className="paper-item" key={i}>
               <p className="paper-citation">
                 {paperUrl ? (
                   <a
@@ -202,7 +236,12 @@ const WorkingPapers = () => {
                     , <span className="paper-status">{journal}</span>
                   </>
                 ) : (
-                  journal && !isWorkingPaper && <>, {journal}</>
+                  journal &&
+                  !isWorkingPaper && (
+                    <>
+                      , <span className="journal-name">{journal}</span>
+                    </>
+                  )
                 )}
                 {authors && <> — ({formatAuthors(authors)})</>}
               </p>
@@ -241,12 +280,18 @@ const WorkingPapers = () => {
               {abstractVisible[i] && html && (
                 <div className="paper-abstract" dangerouslySetInnerHTML={{ __html: html }} />
               )}
-            </StyledPaper>
+            </li>
           );
         })}
-      </StyledPaperList>
-    </StyledWorkingPapersSection>
+      </ul>
+    </StyledResearchList>
   );
 };
 
-export default WorkingPapers;
+ResearchList.propTypes = {
+  title: PropTypes.string.isRequired,
+  papers: PropTypes.array.isRequired,
+  type: PropTypes.string,
+};
+
+export default ResearchList;

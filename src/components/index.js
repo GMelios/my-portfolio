@@ -15,3 +15,4 @@ export { default as Projects } from './sections/projects';
 export { default as Media } from './sections/media';
 export { default as Consultancy } from './sections/consultancy';
 export { default as Contact } from './sections/contact';
+export { default as WorkInProgress } from './sections/work-in-progress';

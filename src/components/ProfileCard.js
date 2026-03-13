@@ -29,12 +29,19 @@ const StyledProfileCard = styled.div`
     flex-shrink: 0;
     object-fit: cover;
     object-position: center;
+    overflow: hidden;
+
+    img {
+      border-radius: 50%;
+    }
 
     @media (max-width: 768px) {
       margin-bottom: 0;
-      margin-right: 30px;
-      width: 90px;
-      height: 90px;
+      margin-right: 20px;
+      width: 80px;
+      height: 80px;
+      min-width: 80px;
+      min-height: 80px;
     }
   }
 

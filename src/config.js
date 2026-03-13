@@ -23,12 +23,8 @@ module.exports = {
       noNumber: true,
     },
     {
-      name: 'Publications',
-      url: '/#featured',
-    },
-    {
-      name: 'Working Papers',
-      url: '/#working-papers',
+      name: 'Research',
+      url: '/research',
     },
     {
       name: 'Teaching',

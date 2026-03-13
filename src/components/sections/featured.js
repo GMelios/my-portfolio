@@ -5,92 +5,81 @@ import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { usePrefersReducedMotion } from '@hooks';
 
-const StyledProjectsGrid = styled.ul`
+const StyledFeaturedSection = styled.section`
+  .view-all {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: var(--fz-sm);
+    color: var(--green);
+    margin-top: 20px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &::after {
+      content: ' →';
+    }
+  }
+`;
+
+const StyledPaperList = styled.ul`
   ${({ theme }) => theme.mixins.resetList};
 `;
 
-const StyledProject = styled.li`
-  position: relative;
-  margin-bottom: 20px;
-  padding: 15px 0;
+const StyledPaper = styled.li`
+  padding: 18px 0;
   border-bottom: 1px solid var(--light-navy);
 
   &:last-of-type {
     border-bottom: none;
   }
 
-  .publication-title-row {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
-  }
+  .paper-citation {
+    font-size: var(--fz-lg);
+    line-height: 1.6;
+    color: var(--dark-slate);
+    margin: 0 0 8px 0;
 
-  .publication-badge {
-    background: #dc2626;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 3px;
-    font-size: var(--fz-xs);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    flex-shrink: 0;
-  }
+    .author-self {
+      text-decoration: underline;
+    }
 
-  .publication-title {
-    color: var(--lightest-slate);
-    font-size: clamp(18px, 3vw, 24px);
-    font-weight: 600;
-    line-height: 1.3;
-    margin: 0;
-
-    a {
-      color: inherit;
+    .paper-title-link {
+      color: var(--lightest-slate);
       text-decoration: none;
+      font-weight: 500;
 
       &:hover {
         color: var(--green);
       }
     }
-  }
 
-  .publication-authors {
-    color: var(--slate);
-    font-size: var(--fz-lg);
-    margin-bottom: 8px;
-
-    .author-name {
-      text-decoration: underline;
+    .journal-name {
+      font-weight: 700;
+      color: var(--dark-slate);
     }
   }
 
-  .publication-journal {
-    color: #394a43ff;
-    font-style: italic;
-    font-size: var(--fz-md);
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
-
-  .publication-links {
+  .paper-links {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     flex-wrap: wrap;
+    margin-top: 8px;
 
     button,
     a {
-      padding: 8px 16px;
+      padding: 4px 12px;
       border: 1px solid var(--green);
       color: var(--green);
       text-decoration: none;
-      font-size: var(--fz-xs);
+      font-size: var(--fz-xxs);
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      border-radius: 4px;
-      transition: all 0.3s ease;
+      border-radius: 3px;
+      transition: all 0.2s ease;
       background: transparent;
       cursor: pointer;
       font-family: inherit;
@@ -100,18 +89,27 @@ const StyledProject = styled.li`
         background: var(--green);
         color: var(--navy);
       }
+
+      &:disabled {
+        opacity: 0.3;
+        cursor: default;
+        &:hover {
+          background: transparent;
+          color: var(--green);
+        }
+      }
     }
   }
 
-  .publication-description {
+  .paper-abstract {
     color: var(--light-slate);
     font-size: var(--fz-md);
-    line-height: 1.5;
-    margin-top: 15px;
-    padding: 20px;
+    line-height: 1.6;
+    margin-top: 12px;
+    padding: 16px 20px;
     background: var(--light-navy);
     border-radius: 4px;
-    border-left: 4px solid var(--green);
+    border-left: 3px solid var(--green);
   }
 `;
 
@@ -155,9 +153,9 @@ const Featured = () => {
     }
   `);
 
-  const featuredProjects = data.featured.edges.filter(({ node }) => node);
+  const publications = data.featured.edges.filter(({ node }) => node);
   const revealTitle = useRef(null);
-  const revealProjects = useRef([]);
+  const revealPapers = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
@@ -166,98 +164,99 @@ const Featured = () => {
     }
 
     sr.reveal(revealTitle.current, srConfig());
-    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
+    revealPapers.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
+  const formatAuthors = authors => {
+    if (!authors) {return null;}
+    return authors.split(', ').map((author, idx, arr) => (
+      <span key={idx}>
+        {author.includes('George Melios') ? <span className="author-self">{author}</span> : author}
+        {idx < arr.length - 1 && ', '}
+      </span>
+    ));
+  };
+
   return (
-    <section id="featured">
+    <StyledFeaturedSection id="featured">
       <h2 className="numbered-heading" ref={revealTitle}>
-        Recent Publications
+        Selected Publications
       </h2>
 
-      <StyledProjectsGrid>
-        {featuredProjects &&
-          featuredProjects.map(({ node }, i) => {
-            const { frontmatter, html } = node;
-            const {
-              external,
-              title,
-              github,
-              cta,
-              slug,
-              authors,
-              journal,
-              year,
-              badge,
-              bib,
-              code,
-              pdf,
-            } = frontmatter;
+      <StyledPaperList>
+        {publications.map(({ node }, i) => {
+          const { frontmatter, html } = node;
+          const { external, title, github, cta, slug, authors, journal, year, bib, code, pdf } =
+            frontmatter;
 
-            return (
-              <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
-                <div className="publication-title-row">
-                  {badge && <div className="publication-badge">{badge}</div>}
-                  <h3 className="publication-title">
-                    {slug ? (
-                      <Link to={`/publications/${slug}`}>{title}</Link>
-                    ) : (
-                      <a href={external || cta || '#'}>{title}</a>
-                    )}
-                  </h3>
-                </div>
+          const paperUrl = slug ? `/publications/${slug}` : external || cta || null;
 
-                <div className="publication-authors">
-                  {(authors || 'Bouke Klein Teeselink, George Melios')
-                    .split(', ')
-                    .map((author, idx) => (
-                      <span key={idx}>
-                        {author.includes('George Melios') ? (
-                          <span className="author-name">{author}</span>
-                        ) : (
-                          author
-                        )}
-                        {idx <
-                          (authors || 'Bouke Klein Teeselink, George Melios').split(', ').length -
-                            1 && ', '}
-                      </span>
-                    ))}
-                </div>
+          return (
+            <StyledPaper key={i} ref={el => (revealPapers.current[i] = el)}>
+              <p className="paper-citation">
+                {paperUrl ? (
+                  <a
+                    className="paper-title-link"
+                    href={paperUrl}
+                    target={paperUrl.startsWith('/') ? '_self' : '_blank'}
+                    rel="noopener noreferrer">
+                    {title}
+                  </a>
+                ) : (
+                  <span style={{ color: 'var(--lightest-slate)', fontWeight: 500 }}>{title}</span>
+                )}
+                {year && ` (${year})`}
+                {journal && (
+                  <>
+                    , <span className="journal-name">{journal}</span>
+                  </>
+                )}
+                {authors && <> — ({formatAuthors(authors)})</>}
+              </p>
 
-                <div className="publication-journal">
-                  {journal && year ? `${journal}, ${year}` : 'Journal of Politics, Vol 87(2), 2025'}
-                </div>
-
-                <div className="publication-links">
-                  {cta && <a href={cta}>DOI</a>}
+              <div className="paper-links">
+                {html && (
                   <button
                     onClick={() => toggleAbstract(i)}
                     className={abstractVisible[i] ? 'active' : ''}>
                     Abstract
                   </button>
-                  {bib ? <a href={bib}>BIB</a> : <button disabled>BIB</button>}
-                  {code ? <a href={code}>CODE</a> : <button disabled>CODE</button>}
-                  {pdf ? (
-                    <a href={pdf} target="_blank" rel="noopener noreferrer">
-                      PDF
-                    </a>
-                  ) : (
-                    <button disabled>PDF</button>
-                  )}
-                  {github && <a href={github}>GitHub</a>}
-                </div>
-
-                {abstractVisible[i] && html && (
-                  <div
-                    className="publication-description"
-                    dangerouslySetInnerHTML={{ __html: html }}
-                  />
                 )}
-              </StyledProject>
-            );
-          })}
-      </StyledProjectsGrid>
-    </section>
+                {cta && (
+                  <a href={cta} target="_blank" rel="noopener noreferrer">
+                    DOI
+                  </a>
+                )}
+                {pdf && (
+                  <a href={pdf} target="_blank" rel="noopener noreferrer">
+                    PDF
+                  </a>
+                )}
+                {bib && <a href={bib}>BIB</a>}
+                {code && (
+                  <a href={code} target="_blank" rel="noopener noreferrer">
+                    Code
+                  </a>
+                )}
+                {github && (
+                  <a href={github} target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>
+                )}
+              </div>
+
+              {abstractVisible[i] && html && (
+                <div className="paper-abstract" dangerouslySetInnerHTML={{ __html: html }} />
+              )}
+            </StyledPaper>
+          );
+        })}
+      </StyledPaperList>
+
+      <Link className="view-all" to="/research">
+        View all research
+      </Link>
+    </StyledFeaturedSection>
   );
 };
 
